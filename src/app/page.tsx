@@ -3,6 +3,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
+import styles from "./landing.module.scss";
 
 import {
   Heading,
@@ -276,12 +277,18 @@ export default function Home() {
             </Row>
             <Row gap="16" paddingLeft="8">
                 <SmartLink unstyled href={`https://github.com/${socials.github}`} target="_blank">
+                <Column className={styles.hover} padding="4" radius="s">
                 <Icon name="github" onBackground="neutral-medium"/>
+                </Column>
                 </SmartLink>
                 <SmartLink unstyled href={socials.linkedin} target="_blank">
+                <Column className={styles.hover} padding="4" radius="s">
               <Icon name="linkedin" onBackground="neutral-medium"/>
+              </Column>
               </SmartLink>
+              <Column className={styles.hover} padding="4" radius="s">
               <Icon name="google" onBackground="neutral-medium"/>
+              </Column>
               </Row>
             <Row paddingLeft="8">
               

@@ -1,0 +1,15 @@
+.hover {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    transform: scale(1);
+    transition: background-color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+                border-color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+                transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hover:hover {
+    background-color: var(--neutral-background-medium);
+    border-color: var(--neutral-alpha-weak);
+    transform: scale(1.05);
+}
