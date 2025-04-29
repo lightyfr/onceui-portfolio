@@ -223,7 +223,7 @@ export default function Home() {
             <Heading color="accent-background-strong" style={{left: 3, top: 9, position: "absolute"}}>+</Heading>
             <Row horizontal="start" vertical="center" fillWidth paddingLeft="xl">
             <Row position="relative" radius="xl" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} width={4.2}>
-            <SmartImage src="/images/adhi.jpg" fill radius="xl"/>
+            <SmartImage src="/images/adhi.JPG" fill radius="xl"/>
             </Row>
             </Row>
             <Line background="neutral-alpha-weak"/>
