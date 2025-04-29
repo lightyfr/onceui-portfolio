@@ -27,4 +27,26 @@
     transform: scale(1.05);
 }
 
+.adaptiveDesc {
+    width: 50%;
+
+    // Show the description on screens smaller than the mobile breakpoint
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+}
+
+.desktopLineBreak {
+    .desktopLineBreak {
+
+        // By default, the line break is visible (this is the desktop state)
+        // No specific style needed here as <br> works by default.
+
+        // Hide the line break on screens smaller than the mobile breakpoint
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+}
+
 

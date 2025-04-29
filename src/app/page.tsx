@@ -234,17 +234,31 @@ export default function Home() {
             <Line background="neutral-alpha-weak"/>
             </Column>
             <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 155, color: "var(accent-background-strong)", position: "absolute"}}>✧</Heading>
-          <Column gap="m" paddingLeft="xl" width={65}>
-            <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{
+          <Column gap="m" paddingLeft="xl" paddingTop="l" fillWidth>
+            <Heading
+
+              variant="display-strong-xl"
+              align="left"
+              marginBottom="16"
+              style={{
               fontWeight: 400,
               background: headingBackgroundStyle,
               WebkitBackgroundClip: 'text', // For Safari/Chrome compatibility
               backgroundClip: 'text',
-              color: 'transparent'
-            }}>
-              {profile.heroText}
+              color: 'transparent',
+              // whiteSpace is removed here, can be controlled via CSS if needed
+              overflowWrap: 'break-word', // Break words if necessary to prevent overflow
+              overflow: 'visible' // Ensure text is not clipped
+              }}>
+                {profile.heroText.split('<br>').map((line, index, arr) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {/* Add a class to control visibility via CSS media queries */}
+                  {index < arr.length - 1 && <br className={styles.desktopLineBreak} />}
+                </React.Fragment>
+                ))}
             </Heading>
-            <Row width={40}>
+            <Row className={styles.adaptiveDesc}>
             <Text paddingLeft="8" onBackground="neutral-medium">
               {(() => {
               // Regex to split by <Name> or **...** capturing the delimiters

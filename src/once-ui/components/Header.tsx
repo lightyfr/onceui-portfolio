@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
         </Row>
         <Button data-border="playful" size="s" variant="primary" label="Connect"/>
       </Row>
-      <Row maxHeight={3} position="fixed" right="104" vertical="center">
+      <Row hide="m" maxHeight={3} position="fixed" right="104" vertical="center">
         <ThemeSwitcher/>
       </Row>
     </Row>

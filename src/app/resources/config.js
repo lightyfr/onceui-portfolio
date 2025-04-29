@@ -2,7 +2,7 @@
 const baseURL = "https://demo.once-ui.com";
 
 const profile = {
-  heroText: "Coder. Video Editor. Designer - Adhitya Nadooli",
+  heroText: "Coder. Video Editor. Designer <br> Adhitya Nadooli",
   name: "Adhitya Nadooli",
   description: "I'm <Name>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving **real-world problems** that are of utmost importance.",
   profilePath: "/images/adhi.JPG",
