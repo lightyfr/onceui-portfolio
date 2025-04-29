@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
         paddingLeft="16"
         paddingY="8"
       >
-        <Row className={styles.hover} position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
+        <Row className={styles.hoverFull} position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
             <SmartImage src={profile.profilePath} fill radius="full"/>
         </Row>
         <Row data-border="playful" paddingX="m">

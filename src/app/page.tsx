@@ -221,19 +221,19 @@ export default function Home() {
             }}
           />
           <Column fillWidth horizontal="start" gap="32" paddingY="32" position="relative">
-            <Column background="surface" paddingBottom="s" fillWidth fitHeight>
+            <Column background="surface" fillWidth fitHeight>
             <Line background="neutral-alpha-weak"/>
             <Column paddingY="m">
             <Heading color="accent-background-strong" style={{left: 3, top: -24, position: "absolute"}}>✧</Heading>
             <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
-            <Row position="relative" radius="xl" vertical="center" padding="4" background="neutral-weak" border="neutral-weak" height={5} fillWidth>
+            <Row position="relative" radius="xl" vertical="center" padding="4" background="neutral-weak" border="neutral-weak" height={6} fillWidth>
             <SmartImage src={profile.bannerPath} fill radius="l"/>
             </Row>
             </Row>
             </Column>
             <Line background="neutral-alpha-weak"/>
             </Column>
-            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 136, color: "var(accent-background-strong)", position: "absolute"}}>✧</Heading>
+            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 155, color: "var(accent-background-strong)", position: "absolute"}}>✧</Heading>
           <Column gap="m" paddingLeft="xl" width={65}>
             <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{
               fontWeight: 400,
