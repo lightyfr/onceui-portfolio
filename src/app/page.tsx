@@ -44,6 +44,7 @@ import {
 } from "@/once-ui/components";
 import { CodeBlock, MediaUpload } from "@/once-ui/modules";
 import { ScrollToTop } from "@/once-ui/components/ScrollToTop";
+import { Header } from "@/once-ui/components/Header";
 
 export default function Home() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -102,7 +103,7 @@ export default function Home() {
   };
 
   return (
-    <Column fillWidth paddingY="80" paddingX="s" horizontal="center" flex={1}>
+    <Column fillWidth paddingY="80" paddingX="s" horizontal="center" flex={1} background="neutral-medium">
       <ScrollToTop><IconButton variant="secondary" icon="chevronUp"/></ScrollToTop>
       <Fade
         zIndex={3}
@@ -118,65 +119,9 @@ export default function Home() {
         fillWidth
         blur={0.25}
       />
-      <Row position="fixed" top="0" fillWidth horizontal="center" zIndex={3}>
-        <Row
-          data-border="rounded"
-          horizontal="space-between"
-          maxWidth="l"
-          paddingRight="64"
-          paddingLeft="32"
-          paddingY="20"
-        >
-          <Logo size="s" icon={false} href="https://once-ui.com" />
-          <Row gap="12" hide="s">
-            <Button
-              href="https://discord.com/invite/5EyAQ4eNdS"
-              prefixIcon="discord"
-              size="s"
-              label="Discord"
-              weight="default"
-              variant="tertiary"
-            />
-            <Button
-              href="https://github.com/once-ui-system"
-              prefixIcon="github"
-              size="s"
-              label="GitHub"
-              weight="default"
-              variant="tertiary"
-            />
-            <Row position="fixed" top="20" right="20">
-              <StyleOverlay
-                position="fixed"
-                top="8"
-                right="8"
-                style={{ height: "calc(100vh - var(--static-space-16))" }}
-              />
-            </Row>
-          </Row>
-          <Row gap="16" show="s" horizontal="center" paddingRight="24">
-            <IconButton
-              href="https://discord.com/invite/5EyAQ4eNdS"
-              icon="discord"
-              variant="tertiary"
-            />
-            <IconButton
-              href="https://github.com/once-ui-system/nextjs-starter"
-              icon="github"
-              variant="tertiary"
-            />
-            <Row position="fixed" top="20" right="20">
-              <StyleOverlay
-                position="fixed"
-                top="8"
-                right="8"
-                style={{ height: "calc(100vh - var(--static-space-16))" }}
-              />
-            </Row>
-          </Row>
-        </Row>
-      </Row>
+      <Header/>
       <Column
+      background="neutral-weak"
         overflow="hidden"
         as="main"
         maxWidth="l"
