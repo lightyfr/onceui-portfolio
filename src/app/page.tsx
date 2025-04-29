@@ -103,7 +103,7 @@ export default function Home() {
   };
 
   return (
-    <Column fillWidth paddingY="80" paddingX="s" horizontal="center" flex={1} background="neutral-medium">
+    <Column fillWidth paddingX="s" horizontal="center" flex={1} background="neutral-medium">
       <ScrollToTop><IconButton variant="secondary" icon="chevronUp"/></ScrollToTop>
       <Fade
         zIndex={3}
@@ -126,9 +126,8 @@ export default function Home() {
         as="main"
         maxWidth="l"
         position="relative"
-        radius="xl"
         horizontal="center"
-        border="neutral-alpha-weak"
+        border="neutral-medium"
         fillWidth
       >
         <Column
@@ -189,24 +188,46 @@ export default function Home() {
               colorEnd: "static-transparent",
             }}
           />
-          <Column fillWidth horizontal="center" gap="32" padding="32" position="relative">
-            <InlineCode radius="xl" shadow="m" fit paddingX="16" paddingY="8">
-              Start by editing
-              <Text onBackground="brand-medium" marginLeft="8">
-                app/page.tsx
-              </Text>
-            </InlineCode>
-            <Heading wrap="balance" variant="display-strong-xl" align="center" marginBottom="16">
-              Code faster than AI
+          <Column fillWidth horizontal="start" gap="32" paddingY="32" position="relative">
+            <Line background="neutral-alpha-weak"/>
+            <Heading color="accent-background-strong" style={{left: 3, top: 9, position: "absolute"}}>+</Heading>
+            <Row horizontal="start" fillWidth paddingLeft="xl">
+            <Row position="relative" radius="full" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} width={4.2}>
+            <SmartImage src="/images/1.jpg" fill radius="full"/>
+            </Row>
+            </Row>
+            <Line background="neutral-alpha-weak"/>
+            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 142, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
+          <Column gap="m" paddingLeft="xl" width={65}>
+            <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{fontWeight: 400}}>
+              Coder, Video Editor, Visionary - Adhitya Nadooli
             </Heading>
+            <Row width={40}>
+            <Text paddingLeft="8">
+            I’m <Text variant="body-strong-m">Adhitya Nadooli</Text>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving real-world problems that are of utmost importance.
+            </Text>
+            </Row>
+            <Row gap="16" paddingLeft="8">
+              <Icon name="github" onBackground="neutral-medium"/>
+              <Icon name="discord" onBackground="neutral-medium"/>
+              <Icon name="google" onBackground="neutral-medium"/>
+              </Row>
+            <Row paddingLeft="8">
+              
             <Button
               id="readDocs"
+              size="l"
               target="_blank"
-              label="Open docs"
+              label="About Me"
               href="https://once-ui.com/docs"
               variant="secondary"
               arrowIcon
             />
+            </Row>
+            </Column>
+            <Line background="neutral-alpha-weak"/>
+
+            
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">
               <Line maxWidth={4} marginBottom="16" background="neutral-alpha-medium" />
               <AvatarGroup

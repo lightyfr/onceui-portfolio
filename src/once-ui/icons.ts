@@ -33,6 +33,9 @@ import {
 
 import { RiVisaLine } from "react-icons/ri";
 
+import { FiDownload } from "react-icons/fi";
+
+
 import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa6";
 
 import { LuChevronsLeftRight } from "react-icons/lu";
@@ -70,7 +73,8 @@ export const iconLibrary: Record<string, IconType> = {
   visa: RiVisaLine,
   security: HiOutlineShieldCheck,
   sparkle: HiOutlineSparkles,
-  computer: HiOutlineComputerDesktop
+  computer: HiOutlineComputerDesktop,
+  download: FiDownload,
 };
 
 export type IconLibrary = typeof iconLibrary;
