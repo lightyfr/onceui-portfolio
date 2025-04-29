@@ -1,5 +1,7 @@
 import type React from "react";
 
+import styles from "../../app/landing.module.scss";
+
 import {
   Button,
   Logo,
@@ -39,7 +41,7 @@ export const Header: React.FC = () => {
         paddingLeft="16"
         paddingY="8"
       >
-        <Row position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
+        <Row className={styles.hover} position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
             <SmartImage src={profile.profilePath} fill radius="full"/>
         </Row>
         <Row data-border="playful" paddingX="m">
