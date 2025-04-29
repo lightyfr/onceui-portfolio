@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
         paddingY="8"
       >
         <Row position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
-            <SmartImage src="/images/1.jpg" fill radius="full"/>
+            <SmartImage src="/images/adhi.jpg" fill radius="full"/>
         </Row>
         <Row data-border="playful" paddingX="s">
         <MegaMenu data-rounded="conservative" menuGroups={menuGroups} />

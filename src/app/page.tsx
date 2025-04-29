@@ -175,6 +175,32 @@ export default function Home() {
           />
           <Background
             mask={{
+              x: 0,
+              y: 0,
+              radius: 100,
+            }}
+            position="absolute"
+            grid={{
+              display: true,
+              opacity: 50,
+              width: "0.5rem",
+              color: "neutral-alpha-medium",
+              height: "1rem",
+            }}
+            gradient={{
+              display: false,
+              tilt: -35,
+              height: 50,
+              opacity: 90,
+              width: 175,
+              x: 220,
+              y: 0,
+              colorStart: "accent-solid-medium",
+              colorEnd: "static-transparent",
+            }}
+          />
+          <Background
+            mask={{
               x: 130,
               y: -30,
               radius: 100,
@@ -195,9 +221,9 @@ export default function Home() {
           <Column fillWidth horizontal="start" gap="32" paddingY="32" position="relative">
             <Line background="neutral-alpha-weak"/>
             <Heading color="accent-background-strong" style={{left: 3, top: 9, position: "absolute"}}>+</Heading>
-            <Row horizontal="start" fillWidth paddingLeft="xl">
-            <Row position="relative" radius="full" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} width={4.2}>
-            <SmartImage src="/images/1.jpg" fill radius="full"/>
+            <Row horizontal="start" vertical="center" fillWidth paddingLeft="xl">
+            <Row position="relative" radius="xl" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} width={4.2}>
+            <SmartImage src="/images/adhi.jpg" fill radius="xl"/>
             </Row>
             </Row>
             <Line background="neutral-alpha-weak"/>
