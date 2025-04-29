@@ -2,7 +2,7 @@
 const baseURL = "https://demo.once-ui.com";
 
 const profile = {
-  heroText: "Coder. Video Editor. Visionary - Adhitya Nadooli",
+  heroText: "Coder. Video Editor. Designer - Adhitya Nadooli",
   name: "Adhitya Nadooli",
   description: "I'm <Name>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving **real-world problems** that are of utmost importance.",
   profilePath: "/images/adhi.JPG",
@@ -106,8 +106,8 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
-    description: "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
+    title: `Portfolio - ${profile.name}`,
+    description: profile.description,
     image: "/og/home.jpg",
     canonical: "https://once-ui.com",
     robots: "index,follow",

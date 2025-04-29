@@ -20,7 +20,6 @@ const menuGroups: MenuGroup[] = [
   { label: "About", href: "/about" },
   { label: "Articles", href: "/articles" },
   { label: "Projects", href: "/projects" },
-  { label: "Speakings", href: "/speakings" },
   { label: "Careers", href: "/careers" },
 ];
 
@@ -43,12 +42,13 @@ export const Header: React.FC = () => {
         <Row position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
             <SmartImage src={profile.profilePath} fill radius="full"/>
         </Row>
-        <Row data-border="playful" paddingX="s">
+        <Row data-border="playful" paddingX="m">
         <MegaMenu data-rounded="conservative" menuGroups={menuGroups} />
         </Row>
-        <Row gap="s" >
+        <Button data-border="playful" size="s" variant="primary" label="Connect"/>
+      </Row>
+      <Row maxHeight={3} position="fixed" right="104" vertical="center">
         <ThemeSwitcher/>
-        </Row>
       </Row>
     </Row>
   );

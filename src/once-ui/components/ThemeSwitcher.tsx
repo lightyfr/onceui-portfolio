@@ -18,6 +18,7 @@ const ThemeSwitcher = forwardRef<HTMLDivElement, ThemeSwitchProps>(
         data-border="rounded"
         ref={ref}
         gap="2"
+        background="surface"
         border="neutral-alpha-weak"
         radius="full"
         {...rest}
