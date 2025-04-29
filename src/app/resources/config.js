@@ -1,6 +1,29 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL = "https://demo.once-ui.com";
 
+const profile = {
+  heroText: "Coder. Video Editor. Visionary - Adhitya Nadooli",
+  name: "Adhitya Nadooli",
+  description: "I'm <Name>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving **real-world problems** that are of utmost importance.",
+  profilePath: "/images/adhi.JPG",
+  bannerPath: "/images/1.jpg",
+};
+
+const socials = {
+  github: "lightyfr", // GitHub username
+  linkedin: "", // LinkedIn profile link
+  twitter: "",
+  discord: "",
+}
+
+
+
+
+
+
+
+
+
 // Import and set font for each variant
 import { Geist } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
@@ -111,4 +134,4 @@ const social = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { baseURL, font, style, meta, schema, social, effects };
+export { baseURL, font, style, meta, schema, social, effects, profile, socials };

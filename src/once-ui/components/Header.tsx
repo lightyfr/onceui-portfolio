@@ -13,6 +13,7 @@ import {
 } from "@/once-ui/components";
 import { CodeBlock, MediaUpload } from "@/once-ui/modules";
 import { ScrollToTop } from "@/once-ui/components/ScrollToTop";
+import { profile, socials } from "@/app/resources/config";
 
 // Define menu groups for the MegaMenu
 const menuGroups: MenuGroup[] = [
@@ -40,7 +41,7 @@ export const Header: React.FC = () => {
         paddingY="8"
       >
         <Row position="relative" radius="full" horizontal="center" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={2.2} width={2.2}>
-            <SmartImage src="/images/adhi.JPG" fill radius="full"/>
+            <SmartImage src={profile.profilePath} fill radius="full"/>
         </Row>
         <Row data-border="playful" paddingX="s">
         <MegaMenu data-rounded="conservative" menuGroups={menuGroups} />

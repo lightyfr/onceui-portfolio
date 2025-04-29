@@ -1,7 +1,7 @@
 // Example page: delete the content or rework the blocks
 "use client";
 
-import type React from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 
 import {
@@ -42,6 +42,7 @@ import {
   CompareImage,
   ThemeSwitcher,
 } from "@/once-ui/components";
+import { profile, socials } from "./resources/config";
 import { CodeBlock, MediaUpload } from "@/once-ui/modules";
 import { ScrollToTop } from "@/once-ui/components/ScrollToTop";
 import { Header } from "@/once-ui/components/Header";
@@ -219,15 +220,19 @@ export default function Home() {
             }}
           />
           <Column fillWidth horizontal="start" gap="32" paddingY="32" position="relative">
+            <Column background="surface" fillWidth fitHeight>
             <Line background="neutral-alpha-weak"/>
-            <Heading color="accent-background-strong" style={{left: 3, top: 9, position: "absolute"}}>+</Heading>
-            <Row horizontal="start" vertical="center" fillWidth paddingLeft="xl">
-            <Row position="relative" radius="xl" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} width={4.2}>
-            <SmartImage src="/images/adhi.JPG" fill radius="xl"/>
+            <Column paddingY="m">
+            <Heading color="accent-background-strong" style={{left: 3, top: -24, position: "absolute"}}>✧</Heading>
+            <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
+            <Row position="relative" radius="xl" vertical="center" padding="2" background="neutral-weak" border="neutral-weak" height={4.2} fillWidth>
+            <SmartImage src={profile.bannerPath} fill radius="xl"/>
             </Row>
             </Row>
+            </Column>
             <Line background="neutral-alpha-weak"/>
-            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 142, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
+            </Column>
+            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 125, color: "var(accent-background-strong)", position: "absolute"}}>✧</Heading>
           <Column gap="m" paddingLeft="xl" width={65}>
             <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{
               fontWeight: 400,
@@ -236,20 +241,51 @@ export default function Home() {
               backgroundClip: 'text',
               color: 'transparent'
             }}>
-              Coder. Video Editor. Visionary - Adhitya Nadooli
+              {profile.heroText}
             </Heading>
             <Row width={40}>
             <Text paddingLeft="8" onBackground="neutral-medium">
-            I'm <Text onBackground="neutral-strong" variant="body-strong-m">Adhitya Nadooli</Text>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving real-world problems that are of utmost importance.
+              {(() => {
+              // Regex to split by <Name> or **...** capturing the delimiters
+              const regex = /(<Name>|\*\*.*?\*\*)/;
+              const parts = profile.description.split(regex).filter(part => part); // Split and filter out empty strings
+
+              return parts.map((part, index) => {
+                if (part === "<Name>") {
+                // Render profile name bold
+                return (
+                  <Text key={index} as="span" onBackground="neutral-strong" variant="body-strong-m">
+                  {profile.name}
+                  </Text>
+                );
+                } else if (part.startsWith("**") && part.endsWith("**")) {
+                // Render text between ** bold
+                const boldText = part.slice(2, -2); // Remove the **
+                return (
+                  <Text key={index} as="span" onBackground="neutral-strong" variant="body-strong-m">
+                  {boldText}
+                  </Text>
+                );
+                } else {
+                // Render normal text part
+                return <React.Fragment key={index}>{part}</React.Fragment>;
+                }
+              });
+              })()}
             </Text>
             </Row>
             <Row gap="16" paddingLeft="8">
-              <Icon name="github" onBackground="neutral-medium"/>
-              <Icon name="discord" onBackground="neutral-medium"/>
+                <SmartLink unstyled href={`https://github.com/${socials.github}`} target="_blank">
+                <Icon name="github" onBackground="neutral-medium"/>
+                </SmartLink>
+                <SmartLink unstyled href={socials.linkedin} target="_blank">
+              <Icon name="linkedin" onBackground="neutral-medium"/>
+              </SmartLink>
               <Icon name="google" onBackground="neutral-medium"/>
               </Row>
             <Row paddingLeft="8">
               
+            <Row paddingY="s">
             <Button
               id="readDocs"
               size="l"
@@ -259,6 +295,7 @@ export default function Home() {
               variant="secondary"
               arrowIcon
             />
+            </Row>
             </Row>
             </Column>
             <Line background="neutral-alpha-medium"/>

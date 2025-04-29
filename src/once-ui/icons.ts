@@ -1,5 +1,7 @@
 import { IconType } from "react-icons";
 
+import { FaLinkedinIn } from "react-icons/fa6";
+
 import {
   HiChevronUp,
   HiChevronDown,
@@ -75,6 +77,7 @@ export const iconLibrary: Record<string, IconType> = {
   sparkle: HiOutlineSparkles,
   computer: HiOutlineComputerDesktop,
   download: FiDownload,
+  linkedin: FaLinkedinIn,
 };
 
 export type IconLibrary = typeof iconLibrary;
