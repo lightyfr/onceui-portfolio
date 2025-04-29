@@ -2,7 +2,7 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Heading,
@@ -58,6 +58,9 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [tags, setTags] = useState<string[]>(["UX / UI", "Design systems", "AI / ML"]);
   const [twoFA, setTwoFA] = useState(false);
+  const [headingBackgroundStyle, setHeadingBackgroundStyle] = useState(
+    'linear-gradient(to bottom, var(--neutral-on-background-medium) 20%, var(--neutral-on-background-strong)'
+  );
 
   const handleSelect = (value: string) => {
     console.log("Selected option:", value);
@@ -162,23 +165,24 @@ export default function Home() {
               display: true,
               tilt: -35,
               height: 50,
-              width: 75,
-              x: 100,
-              y: 40,
+              opacity: 90,
+              width: 175,
+              x: 130,
+              y: 0,
               colorStart: "accent-solid-medium",
               colorEnd: "static-transparent",
             }}
           />
           <Background
             mask={{
-              x: 100,
-              y: 0,
+              x: 130,
+              y: -30,
               radius: 100,
             }}
             position="absolute"
             gradient={{
-              display: true,
-              opacity: 100,
+              display: false,
+              opacity: 80,
               tilt: -35,
               height: 20,
               width: 120,
@@ -199,12 +203,18 @@ export default function Home() {
             <Line background="neutral-alpha-weak"/>
             <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 142, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
           <Column gap="m" paddingLeft="xl" width={65}>
-            <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{fontWeight: 400}}>
-              Coder, Video Editor, Visionary - Adhitya Nadooli
+            <Heading variant="display-strong-xl" align="left" marginBottom="16" style={{
+              fontWeight: 400,
+              background: headingBackgroundStyle,
+              WebkitBackgroundClip: 'text', // For Safari/Chrome compatibility
+              backgroundClip: 'text',
+              color: 'transparent'
+            }}>
+              Coder. Video Editor. Visionary - Adhitya Nadooli
             </Heading>
             <Row width={40}>
-            <Text paddingLeft="8">
-            I’m <Text variant="body-strong-m">Adhitya Nadooli</Text>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving real-world problems that are of utmost importance.
+            <Text paddingLeft="8" onBackground="neutral-medium">
+            I'm <Text onBackground="neutral-strong" variant="body-strong-m">Adhitya Nadooli</Text>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving real-world problems that are of utmost importance.
             </Text>
             </Row>
             <Row gap="16" paddingLeft="8">
@@ -225,7 +235,7 @@ export default function Home() {
             />
             </Row>
             </Column>
-            <Line background="neutral-alpha-weak"/>
+            <Line background="neutral-alpha-medium"/>
 
             
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">
