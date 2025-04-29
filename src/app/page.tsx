@@ -166,8 +166,8 @@ export default function Home() {
               tilt: -35,
               height: 50,
               opacity: 90,
-              width: 175,
-              x: 130,
+              width: 145,
+              x: 210,
               y: 0,
               colorStart: "accent-solid-medium",
               colorEnd: "static-transparent",
@@ -183,9 +183,9 @@ export default function Home() {
             grid={{
               display: true,
               opacity: 50,
-              width: "0.5rem",
+              width: "3rem",
               color: "neutral-alpha-medium",
-              height: "1rem",
+              height: "3rem",
             }}
             gradient={{
               display: false,
@@ -219,19 +219,18 @@ export default function Home() {
             }}
           />
           <Column fillWidth horizontal="start" gap="32" paddingY="32" position="relative">
-            <Column background="surface" fillWidth fitHeight>
-            <Line background="neutral-alpha-weak"/>
-            <Column paddingY="m">
-            <Heading variant="heading-default-xl" color="accent-background-strong" style={{left: 6, top: -20, position: "absolute"}}>+</Heading>
-            <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
-            <Row position="relative" radius="xl" vertical="center" padding="4" background="neutral-weak" border="neutral-weak" height={6} fillWidth>
-            <SmartImage src={profile.bannerPath} fill radius="l"/>
-            </Row>
+            <Column background="surface" border="neutral-alpha-weak" fillWidth height={6} paddingLeft="l">
+            <Row fillWidth fillHeight gap="160">
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
+            <Line background="neutral-alpha-weak" vert/>
             </Row>
             </Column>
-            <Line background="neutral-alpha-weak"/>
-            </Column>
-            <Heading variant="heading-default-xl" onBackground="accent-strong" color="accent-background-strong" style={{left: 6, top: 160, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
           <Column gap="m" paddingLeft="xl" paddingTop="l" fillWidth>
             <Heading
               // Apply base styling here, gradient will be applied via spans
@@ -250,7 +249,7 @@ export default function Home() {
               {(() => {
                 // Define the default gradient style
                 const gradientStyle = {
-                  background: 'linear-gradient(to bottom, var(--neutral-on-background-strong) 25%, var(--neutral-background-medium))',
+                  background: 'linear-gradient(to bottom, var(--neutral-on-background-strong) 35%, var(--neutral-background-medium))',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
@@ -262,7 +261,7 @@ export default function Home() {
                   background: 'linear-gradient(to right, purple, blue, orange)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
-                  textShadow: '0 2px 5px rgba(255, 255, 255, 0.3)', // Changed to white with opacity
+                  textShadow: '0 2px 5px rgba(255, 255, 255, 0.2)', // Changed to white with opacity
                   fontWeight: 600,
                   color: 'transparent',
                   display: 'inline', // Ensure span behaves correctly inline
@@ -355,7 +354,7 @@ export default function Home() {
               </Row>
             <Row paddingLeft="8">
               
-            <Row paddingY="s">
+            <Row paddingY="s" paddingBottom="l">
             <Button
               id="readDocs"
               size="l"
@@ -368,9 +367,72 @@ export default function Home() {
             </Row>
             </Row>
             </Column>
+            <Column background="surface" fillWidth fitHeight>
             <Line background="neutral-alpha-medium"/>
-
+            <Column paddingY="m">    
+            <Heading variant="heading-default-xl" color="accent-background-strong" style={{left: 6, top: -17.7, position: "absolute"}}>+</Heading>
+            <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
+            <Row position="relative" radius="l" vertical="center" padding="4" background="neutral-alpha-weak" border="neutral-alpha-weak" height={6.5} gap="4" fillWidth>
+            <SmartImage border="neutral-alpha-weak" leftRadius="m" rightRadius="xs" src={profile.profilePath} width={6.5} fillHeight/>
+            <Row fillWidth horizontal="start" gap="l" paddingLeft="l">
+            <Column gap="4" horizontal="center">
+            <Heading>3000+</Heading>
+            <Text>Total Commits</Text>
+            </Column>
+            <Column gap="4" horizontal="center">
+            <Heading>200+</Heading>
+            <Text>Stars</Text>
+            </Column>
+            <Column gap="4" horizontal="center">
+            <Heading>4+</Heading>
+            <Text>Years of Experience</Text>
+            </Column>
+            <Column gap="4" horizontal="center">
+            <Heading>6+</Heading>
+            <Text>Programming Languages</Text>
+            </Column>
+            </Row>
+            </Row>
+            </Row>
+            </Column>
+            <Line background="neutral-alpha-weak"/>
+            <Heading variant="heading-default-xl" onBackground="accent-strong" color="accent-background-strong" style={{left: 6, top: 137, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
+            </Column>
             
+            <Column paddingX="xl" paddingY="m">
+            <Text color="neutral-strong" variant="body-strong-s" style={{fontFamily: "monospace", color: 'var(--neutral-solid-weak)'}}>00 - TOOLS & SYSTEMS</Text>
+            </Column>
+            <Row paddingX="xl" fillWidth height={4} gap="s">
+              <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+              </Row>
+              <Row paddingX="xl" fillWidth height={4} gap="s">
+              <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon tooltip="discord" name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
+                <Icon name="discord" size="xl" color="neutral-strong" />
+                </Row>
+              </Row>
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">
               <Line maxWidth={4} marginBottom="16" background="neutral-alpha-medium" />
               <AvatarGroup

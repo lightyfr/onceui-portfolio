@@ -7,7 +7,7 @@ const profile = {
   title: "Developer",
   description: "I'm <Name>, a developer - oss contributor - competitive programmer who loves and derives great pleasure from the challenge of solving **real-world problems** that are of utmost importance.",
   profilePath: "/images/adhi.JPG",
-  bannerPath: "/images/1.jpg",
+  bannerPath: "/images/ban.jpg",
 };
 
 const socials = {
