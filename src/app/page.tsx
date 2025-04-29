@@ -60,9 +60,7 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [tags, setTags] = useState<string[]>(["UX / UI", "Design systems", "AI / ML"]);
   const [twoFA, setTwoFA] = useState(false);
-  const [headingBackgroundStyle, setHeadingBackgroundStyle] = useState(
-    'linear-gradient(to bottom, var(--neutral-on-background-medium) 20%, var(--neutral-on-background-strong)'
-  );
+ 
 
   const handleSelect = (value: string) => {
     console.log("Selected option:", value);
@@ -224,7 +222,7 @@ export default function Home() {
             <Column background="surface" fillWidth fitHeight>
             <Line background="neutral-alpha-weak"/>
             <Column paddingY="m">
-            <Heading color="accent-background-strong" style={{left: 3, top: -24, position: "absolute"}}>✧</Heading>
+            <Heading variant="heading-default-xl" color="accent-background-strong" style={{left: 6, top: -20, position: "absolute"}}>+</Heading>
             <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
             <Row position="relative" radius="xl" vertical="center" padding="4" background="neutral-weak" border="neutral-weak" height={6} fillWidth>
             <SmartImage src={profile.bannerPath} fill radius="l"/>
@@ -233,30 +231,81 @@ export default function Home() {
             </Column>
             <Line background="neutral-alpha-weak"/>
             </Column>
-            <Heading onBackground="accent-strong" color="accent-background-strong" style={{left: 3, top: 155, color: "var(accent-background-strong)", position: "absolute"}}>✧</Heading>
+            <Heading variant="heading-default-xl" onBackground="accent-strong" color="accent-background-strong" style={{left: 6, top: 160, color: "var(accent-background-strong)", position: "absolute"}}>+</Heading>
           <Column gap="m" paddingLeft="xl" paddingTop="l" fillWidth>
             <Heading
-
+              // Apply base styling here, gradient will be applied via spans
+              onBackground="neutral-strong" // Set a base color for non-gradient text
               variant="display-strong-xl"
               align="left"
               marginBottom="16"
               style={{
-              fontWeight: 400,
-              background: headingBackgroundStyle,
-              WebkitBackgroundClip: 'text', // For Safari/Chrome compatibility
-              backgroundClip: 'text',
-              color: 'transparent',
-              // whiteSpace is removed here, can be controlled via CSS if needed
-              overflowWrap: 'break-word', // Break words if necessary to prevent overflow
-              overflow: 'visible' // Ensure text is not clipped
-              }}>
-                {profile.heroText.split('<br>').map((line, index, arr) => (
-                <React.Fragment key={index}>
-                  {line}
-                  {/* Add a class to control visibility via CSS media queries */}
-                  {index < arr.length - 1 && <br className={styles.desktopLineBreak} />}
-                </React.Fragment>
-                ))}
+              fontWeight: 450,
+              overflowWrap: 'break-word',
+              overflow: 'visible',
+              }}
+            >
+              {profile.heroText.split('<br>').map((line, lineIndex, lineArr) => (
+              <React.Fragment key={lineIndex}>
+              {(() => {
+                // Define the default gradient style
+                const gradientStyle = {
+                  background: 'linear-gradient(to bottom, var(--neutral-on-background-strong) 25%, var(--neutral-background-medium))',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline', // Ensure span behaves correctly inline
+                };
+
+                // Define the rainbow gradient style
+                const rainbowGradientStyle = {
+                  background: 'linear-gradient(to right, purple, blue, orange)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  textShadow: '0 2px 5px rgba(255, 255, 255, 0.3)', // Changed to white with opacity
+                  fontWeight: 600,
+                  color: 'transparent',
+                  display: 'inline', // Ensure span behaves correctly inline
+                };
+
+                // Regex to capture <tag>, #tag#, or normal text segments
+                const regex = /(<[^>]+>)|(#.*?#)|([^<#]+)/g;
+                const renderedParts = [];
+                let match;
+                let lastIndex = 0; // Keep track of the last index processed
+
+                while ((match = regex.exec(line)) !== null) {
+                  // Add any normal text before the current match
+                  if (match.index > lastIndex) {
+                    renderedParts.push(<React.Fragment key={`text-${lastIndex}`}>{line.substring(lastIndex, match.index)}</React.Fragment>);
+                  }
+
+                  if (match[1]) { // <tag>
+                    const textContent = match[1].slice(1, -1);
+                    renderedParts.push(<span key={`gradient-${match.index}`} style={gradientStyle}>{textContent}</span>);
+                  } else if (match[2]) { // #tag#
+                    const textContent = match[2].slice(1, -1);
+                    renderedParts.push(<span key={`rainbow-${match.index}`} style={rainbowGradientStyle}>{textContent}</span>);
+                  } else if (match[3]) { // Normal text segment
+                    const textContent = match[3];
+                    // Render this segment as plain text
+                    renderedParts.push(<React.Fragment key={`normal-${match.index}`}>{textContent}</React.Fragment>);
+                  }
+                  // Update lastIndex to the end of the current match
+                  lastIndex = regex.lastIndex;
+                }
+
+                // Add any remaining normal text after the last match
+                if (lastIndex < line.length) {
+                  renderedParts.push(<React.Fragment key={`text-${lastIndex}`}>{line.substring(lastIndex)}</React.Fragment>);
+                }
+
+                return renderedParts;
+              })()}
+              {/* Add a class to control visibility via CSS media queries */}
+              {lineIndex < lineArr.length - 1 && <br className={styles.desktopLineBreak} />}
+              </React.Fragment>
+              ))}
             </Heading>
             <Row className={styles.adaptiveDesc}>
             <Text paddingLeft="8" onBackground="neutral-medium">
