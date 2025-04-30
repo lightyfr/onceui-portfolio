@@ -49,10 +49,26 @@ import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa6";
 import { RiSupabaseLine } from "react-icons/ri";
 
 import { LuChevronsLeftRight } from "react-icons/lu";
-import { SiPrisma } from "react-icons/si";
+import { SiJavascript, SiPrisma } from "react-icons/si";
 import { FaGulp } from "react-icons/fa";
 import { SiAdobeaftereffects } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa";
+import { BiLogoMongodb } from "react-icons/bi";
+import { IoLogoFirebase } from "react-icons/io5";
+import { FaFigma } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+import { SiAdobephotoshop } from "react-icons/si";
+import { SiAdobeillustrator } from "react-icons/si";
+import { SiIntellijidea } from "react-icons/si";
+import { SiTypescript, SiPython, SiHtml5, SiCss3 } from "react-icons/si";
+import { BsFiletypeScss } from "react-icons/bs";
+import { GiWireframeGlobe } from "react-icons/gi";
+import { FaCode } from "react-icons/fa";
+import { RiDatabase2Line } from "react-icons/ri";
+import { LuAppWindow } from "react-icons/lu";
+
+
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -99,6 +115,24 @@ export const iconLibrary: Record<string, IconType> = {
   gulp: FaGulp,
   afterEffects: SiAdobeaftereffects,
   java: FaJava,
+  git: FaGitAlt,
+  mongodb: BiLogoMongodb,
+  firebase: IoLogoFirebase,
+  figma: FaFigma,
+  vscode: VscVscode,
+  photoshop: SiAdobephotoshop,
+  illustrator: SiAdobeillustrator,
+  intellij: SiIntellijidea,
+  typescript: SiTypescript,
+  javascript: SiJavascript,
+  python: SiPython,
+  html: SiHtml5,
+  css: SiCss3,
+  scss: BsFiletypeScss,
+  wireframe: GiWireframeGlobe,
+  code: FaCode,
+  database: RiDatabase2Line,
+  app: LuAppWindow,
 };
 
 export type IconLibrary = typeof iconLibrary;

@@ -405,22 +405,18 @@ export default function Home() {
             <Text color="neutral-strong" variant="body-strong-s" style={{fontFamily: "monospace", color: 'var(--neutral-solid-weak)'}}>01 - TOOLS & SYSTEMS</Text>
             </Column>
             <Row paddingX="xl" fillWidth height={4} gap="s">
+            <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+            <Icon tooltip="My Frameworks" name="wireframe" size="xl" color="neutral-strong" />
+            </Row>
+            <Line vert/>
               <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
                 <Icon tooltip="React" name="react" size="xl" color="neutral-strong" />
                 </Row>
                 <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Electron" name="electron" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
                 <Icon tooltip="NextJS" name="nextjs" size="xl" color="neutral-strong" />
-                </Row>
-                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
-                <Icon tooltip="ElectronJS" name="electron" size="xl" color="neutral-strong" />
-                </Row>
-                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
-                <Icon tooltip="Supabase" name="supabase" size="xl" color="neutral-strong" />
-                </Row>
-              </Row>
-              <Row paddingX="xl" fillWidth height={4} gap="s">
-              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
-                <Icon tooltip="Prisma" name="prisma" size="xl" color="neutral-strong" />
                 </Row>
                 <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
                 <Icon tooltip="NodeJS" name="nodejs" size="xl" color="neutral-strong" />
@@ -429,10 +425,76 @@ export default function Home() {
                 <Icon tooltip="GulpJS" name="gulp" size="xl" color="neutral-strong" />
                 </Row>
                 <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
-                <Icon tooltip="Adobe After Effects" name="afterEffects" size="xl" color="neutral-strong" />
+                <Icon tooltip="Git" name="git" size="xl" color="neutral-strong" />
+                </Row>
+              </Row>
+              <Row paddingX="xl" fillWidth height={4} gap="s">
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="My Coding Languages" name="code" size="xl" color="neutral-strong" />
+                </Row>
+                <Line vert/>
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Typescript" name="typescript" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Javascript" name="javascript" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Python" name="python" size="xl" color="neutral-strong" />
                 </Row>
                 <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
                 <Icon tooltip="Java" name="java" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="HTML" name="html" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="CSS" name="css" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="SCSS" name="scss" size="xl" color="neutral-strong" />
+                </Row>
+              </Row>
+              <Row paddingX="xl" fillWidth height={4} gap="s">
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="My Databases" name="database" size="xl" color="neutral-strong" />
+                </Row>
+                <Line vert/>
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="MongoDB" name="mongodb" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Supabase" name="supabase" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Firebase" name="firebase" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Prisma" name="prisma" size="xl" color="neutral-strong" />
+                </Row>
+              </Row>
+              <Row paddingX="xl" fillWidth height={4} gap="s">
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="My Applications" name="app" size="xl" color="neutral-strong" />
+                </Row>
+                <Line vert/>
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Figma" name="figma" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="VS Code" name="vscode" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Intellij" name="intellij" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Adobe After Effects" name="afterEffects" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Photoshop" name="photoshop" size="xl" color="neutral-strong" />
+                </Row>
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Adobe Illustrator" name="illustrator" size="xl" color="neutral-strong" />
                 </Row>
               </Row>
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">
