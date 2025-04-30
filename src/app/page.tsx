@@ -369,7 +369,9 @@ export default function Home() {
             </Column>
             <Column background="surface" fillWidth fitHeight>
             <Line background="neutral-alpha-medium"/>
-            <Column paddingY="m">    
+            <Text paddingLeft="xl" paddingTop="m" color="neutral-strong" variant="body-strong-s" style={{fontFamily: "monospace", color: 'var(--neutral-solid-weak)'}}>00 - STATISTICS</Text>
+            <Column paddingY="m">   
+             
             <Heading variant="heading-default-xl" color="accent-background-strong" style={{left: 6, top: -17.7, position: "absolute"}}>+</Heading>
             <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
             <Row position="relative" radius="l" vertical="center" padding="4" background="neutral-alpha-weak" border="neutral-alpha-weak" height={6.5} gap="4" fillWidth>
@@ -400,37 +402,37 @@ export default function Home() {
             </Column>
             
             <Column paddingX="xl" paddingY="m">
-            <Text color="neutral-strong" variant="body-strong-s" style={{fontFamily: "monospace", color: 'var(--neutral-solid-weak)'}}>00 - TOOLS & SYSTEMS</Text>
+            <Text color="neutral-strong" variant="body-strong-s" style={{fontFamily: "monospace", color: 'var(--neutral-solid-weak)'}}>01 - TOOLS & SYSTEMS</Text>
             </Column>
             <Row paddingX="xl" fillWidth height={4} gap="s">
-              <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="React" name="react" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="NextJS" name="nextjs" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="ElectronJS" name="electron" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Supabase" name="supabase" size="xl" color="neutral-strong" />
                 </Row>
               </Row>
               <Row paddingX="xl" fillWidth height={4} gap="s">
-              <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon tooltip="discord" name="discord" size="xl" color="neutral-strong" />
+              <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Prisma" name="prisma" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="NodeJS" name="nodejs" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="GulpJS" name="gulp" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Adobe After Effects" name="afterEffects" size="xl" color="neutral-strong" />
                 </Row>
-                <Row horizontal="center" radius="l" vertical="center" background="neutral-strong" width={4} height={4}>
-                <Icon name="discord" size="xl" color="neutral-strong" />
+                <Row horizontal="center" radius="l" vertical="center" border="neutral-alpha-weak" background="neutral-medium" width={4} height={4}>
+                <Icon tooltip="Java" name="java" size="xl" color="neutral-strong" />
                 </Row>
               </Row>
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">

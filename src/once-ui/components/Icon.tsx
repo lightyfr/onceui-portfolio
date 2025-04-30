@@ -1,5 +1,10 @@
 "use client";
 
+// Define this variable outside the component scope, 
+// so it's shared across all Icon instances.
+let lastTooltipHideTime = 0;
+const TOOLTIP_DELAY = 400; // ms
+
 import React, { forwardRef, useState, useEffect, ReactNode } from "react";
 import classNames from "classnames";
 import { IconType, } from "react-icons";
@@ -49,12 +54,19 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
 
     useEffect(() => {
       let timer: NodeJS.Timeout;
+      const now = Date.now();
+
       if (isHover) {
+        const timeSinceLastHide = now - lastTooltipHideTime;
+        const delay = timeSinceLastHide < TOOLTIP_DELAY ? 0 : TOOLTIP_DELAY;
+
         timer = setTimeout(() => {
           setTooltipVisible(true);
-        }, 400);
+        }, delay);
       } else {
         setTooltipVisible(false);
+        // Update the time when the tooltip starts hiding
+        lastTooltipHideTime = now; 
       }
 
       return () => clearTimeout(timer);
@@ -82,7 +94,12 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
         aria-hidden={decorative ? "true" : undefined}
         aria-label={decorative ? undefined : name}
         onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
+        onMouseLeave={() => {
+          setIsHover(false);
+          // Also update time immediately on mouse leave, 
+          // in case the timeout didn't clear yet
+          lastTooltipHideTime = Date.now(); 
+        }}
         {...rest}
       >
         <IconComponent />

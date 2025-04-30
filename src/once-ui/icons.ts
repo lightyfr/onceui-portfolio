@@ -1,6 +1,9 @@
 import { IconType } from "react-icons";
 
 import { FaLinkedinIn } from "react-icons/fa6";
+import { FaReact } from "react-icons/fa";
+import { IoLogoElectron } from "react-icons/io5";
+import { TbBrandNodejs } from "react-icons/tb";
 
 import {
   HiChevronUp,
@@ -33,6 +36,9 @@ import {
   HiOutlineComputerDesktop,
 } from "react-icons/hi2";
 
+import { RiNextjsFill } from "react-icons/ri";
+
+
 import { RiVisaLine } from "react-icons/ri";
 
 import { FiDownload } from "react-icons/fi";
@@ -40,7 +46,13 @@ import { FiDownload } from "react-icons/fi";
 
 import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa6";
 
+import { RiSupabaseLine } from "react-icons/ri";
+
 import { LuChevronsLeftRight } from "react-icons/lu";
+import { SiPrisma } from "react-icons/si";
+import { FaGulp } from "react-icons/fa";
+import { SiAdobeaftereffects } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -78,6 +90,15 @@ export const iconLibrary: Record<string, IconType> = {
   computer: HiOutlineComputerDesktop,
   download: FiDownload,
   linkedin: FaLinkedinIn,
+  react: FaReact,
+  nextjs: RiNextjsFill,
+  electron: IoLogoElectron,
+  supabase: RiSupabaseLine,
+  prisma: SiPrisma,
+  nodejs: TbBrandNodejs,
+  gulp: FaGulp,
+  afterEffects: SiAdobeaftereffects,
+  java: FaJava,
 };
 
 export type IconLibrary = typeof iconLibrary;
