@@ -167,7 +167,7 @@ export default function Home() {
               height: 50,
               opacity: 90,
               width: 145,
-              x: 210,
+              x: 270,
               y: 0,
               colorStart: "accent-solid-medium",
               colorEnd: "static-transparent",
@@ -176,8 +176,8 @@ export default function Home() {
           <Background
             mask={{
               x: 0,
-              y: 0,
-              radius: 100,
+              y: -10,
+              radius: 150,
             }}
             position="absolute"
             grid={{
@@ -374,7 +374,65 @@ export default function Home() {
              
             <Heading variant="heading-default-xl" color="accent-background-strong" style={{left: 6, top: -17.7, position: "absolute"}}>+</Heading>
             <Row horizontal="start" vertical="center" fillWidth paddingX="xl">
-            <Row position="relative" radius="l" vertical="center" padding="4" background="neutral-alpha-weak" border="neutral-alpha-weak" height={6.5} gap="4" fillWidth>
+            <Row overflow="hidden" position="relative" radius="l" vertical="center" padding="4" background="neutral-alpha-weak" border="neutral-alpha-weak" height={6.5} gap="4" fillWidth>
+            <Background
+            mask={{
+              x: 0,
+              y: 48,
+            }}
+            position="absolute"
+            grid={{
+              display: false,
+              width: "0.25rem",
+              color: "neutral-alpha-medium",
+              height: "0.25rem",
+            }}
+          />
+          <Background
+            mask={{
+              x: 80,
+              y: 0,
+              radius: 100,
+            }}
+            position="absolute"
+            gradient={{
+              display: true,
+              tilt: -35,
+              height: 50,
+              opacity: 90,
+              width: 145,
+              x: 210,
+              y: 0,
+              colorStart: "accent-solid-medium",
+              colorEnd: "static-transparent",
+            }}
+          />
+          <Background
+            mask={{
+              x: 0,
+              y: 0,
+              radius: 100,
+            }}
+            position="absolute"
+            grid={{
+              display: true,
+              opacity: 50,
+              width: "2rem",
+              color: "neutral-alpha-medium",
+              height: "2rem",
+            }}
+            gradient={{
+              display: false,
+              tilt: -35,
+              height: 50,
+              opacity: 90,
+              width: 175,
+              x: 220,
+              y: 0,
+              colorStart: "accent-solid-medium",
+              colorEnd: "static-transparent",
+            }}
+          />
             <SmartImage border="neutral-alpha-weak" leftRadius="m" rightRadius="xs" src={profile.profilePath} width={6.5} fillHeight/>
             <Row fillWidth horizontal="start" gap="l" paddingLeft="l">
             <Column gap="4" horizontal="center">
@@ -497,6 +555,7 @@ export default function Home() {
                 <Icon tooltip="Adobe Illustrator" name="illustrator" size="xl" color="neutral-strong" />
                 </Row>
               </Row>
+              <Line background="neutral-alpha-weak"/>
             <Column horizontal="center" paddingTop="64" fillWidth gap="24">
               <Line maxWidth={4} marginBottom="16" background="neutral-alpha-medium" />
               <AvatarGroup
