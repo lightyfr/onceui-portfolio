@@ -33,7 +33,6 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           background="surface"
           onBackground="neutral-strong"
           transition="macro-medium"
-          border="neutral-medium"
           cursor="interactive"
           align="left"
           className={styles.card}
