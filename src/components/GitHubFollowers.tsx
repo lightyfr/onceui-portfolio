@@ -61,7 +61,7 @@ const GitHubFollowers: React.FC = () => {
     }
 
   return (
-    <Grid columns={7}> {/* Adjust columns and gap as needed */}
+    <Grid columns={7} gap='8'> {/* Adjust columns and gap as needed */}
       {followers.map((follower) => (
         <Grid key={follower.id} padding="4" align="center" gap="8">
 

@@ -597,7 +597,7 @@ export default function Home() {
                     <Column background="neutral-medium" overflow="hidden" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative'}}>
                   <Icon name="arrowUpRight" color="neutral-alpha-medium" size="xl" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
                     <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
-                      <Text onBackground="neutral-weak" variant="body-strong-m">OSS CONTRIBUTION</Text>
+                      <Text onBackground="neutral-weak" variant="body-strong-m">CONTRIBUTIONS</Text>
                       <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>10+</Heading>
                     </Column>
                   </Column>
