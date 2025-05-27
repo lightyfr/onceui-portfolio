@@ -5,6 +5,7 @@ import { Grid } from '../once-ui/components/Grid'; // Adjust import path if need
 import Image from 'next/image';
 import { socials } from '../app/resources/config'; // Adjust import path if needed
 import { Row, SmartImage } from '@/once-ui/components';
+import styles from '../app/landing.module.scss'
 
 interface Follower {
   login: string;
@@ -64,9 +65,9 @@ const GitHubFollowers: React.FC = () => {
       {followers.map((follower) => (
         <Grid key={follower.id} padding="4" align="center" gap="8">
 
-            <Row width={1.8} height={1.8}>
+            <Row width={1.8} height={1.8} radius='full' className={styles.followerImage}>
             <SmartImage fill radius="full" src={follower.avatar_url}/>
-                  </Row>
+            </Row>
         </Grid>
       ))}
     </Grid>

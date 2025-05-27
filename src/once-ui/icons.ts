@@ -67,6 +67,9 @@ import { GiWireframeGlobe } from "react-icons/gi";
 import { FaCode } from "react-icons/fa";
 import { RiDatabase2Line } from "react-icons/ri";
 import { LuAppWindow } from "react-icons/lu";
+import { IoIosGitMerge } from "react-icons/io";
+import { FaRegStar } from "react-icons/fa";
+import { MdCommit } from "react-icons/md";
 
 
 
@@ -133,6 +136,9 @@ export const iconLibrary: Record<string, IconType> = {
   code: FaCode,
   database: RiDatabase2Line,
   app: LuAppWindow,
+  merge: IoIosGitMerge,
+  star: FaRegStar,
+  commit: MdCommit,
 };
 
 export type IconLibrary = typeof iconLibrary;

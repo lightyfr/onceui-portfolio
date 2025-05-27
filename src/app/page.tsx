@@ -51,6 +51,25 @@ import { Header } from "@/once-ui/components/Header";
 import GitHubFollowers from "@/components/GitHubFollowers";
 
 export default function Home() {
+  const [githubData, setGithubData] = useState({
+    stars: 190, // Default value
+    commits: 4054, // Default value
+    repos: 186, // Default value
+  });
+
+  useEffect(() => {
+    fetch('/api')
+      .then((res) => res.json())
+      .then((data) => {
+        setGithubData({
+          stars: data.totalStars,
+          commits: data.commits,
+          repos: data.repos,
+        });
+      })
+      .catch((error) => console.error('Error fetching GitHub data:', error));
+  }, []);
+
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedRange, setSelectedRange] = useState<DateRange>();
   const [isFirstDialogOpen, setIsFirstDialogOpen] = useState(false);
@@ -126,13 +145,14 @@ export default function Home() {
       />
       <Header/>
       <Column
-      background="neutral-weak"
+        background="neutral-weak"
         overflow="hidden"
         as="main"
         maxWidth="l"
         position="relative"
         horizontal="center"
-        border="neutral-medium"
+        borderLeft="neutral-medium"
+        borderRight="neutral-medium"
         fillWidth
       >
         <Column
@@ -263,7 +283,7 @@ export default function Home() {
                   background: 'linear-gradient(to right, purple, blue, orange)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
-                  textShadow: '0 2px 5px rgba(255, 255, 255, 0.2)', // Changed to white with opacity
+                  textShadow: '0 2px 5px var(--rainbow-grad)', // Changed to white with opacity
                   fontWeight: 600,
                   color: 'transparent',
                   display: 'inline', // Ensure span behaves correctly inline
@@ -575,11 +595,11 @@ export default function Home() {
               </Card>
               {/* Stats Cards - Replaced Column with Grid */}
               <Grid columns={3} gap="s">
-                  <Card background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
-                    <Icon name="star" color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
-                    <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
+                  <Card overflow="hidden" background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
+                  <Icon name="star" size="xl" fill color="neutral-alpha-weak" style={{ position: 'absolute', bottom: 20, right: -10, opacity: 0.5, zIndex: 0, scale: '1.5' }}   />
+                  <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
                       <Text onBackground="neutral-weak" variant="body-strong-m">STARS</Text>
-                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>190</Heading>
+                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>{githubData.stars}</Heading>
                     </Column>
                   </Card>
                   <Card background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
@@ -593,26 +613,26 @@ export default function Home() {
                     <Icon name="folder" color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
                     <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
                       <Text onBackground="neutral-weak" variant="body-strong-m">REPOSITORIES</Text>
-                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>186</Heading>
+                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>{githubData.repos}</Heading>
                     </Column>
                   </Card>
                 {/* Removed the intermediate Row components */}
                 <Card background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
-                    <Icon name="search" color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
-                    <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
+                <Icon name="commit" color="neutral-alpha-medium" size="xl" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0, scale: '1.5'}} />
+                <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
                       <Text onBackground="neutral-weak" variant="body-strong-m">COMMITS</Text>
-                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>4054</Heading>
+                      <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>{githubData.commits}</Heading>
                     </Column>
                   </Card>
                   <Card background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
-                  <Icon name="arrowUpRight" color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
+                  <Icon name="arrowUpRight" color="neutral-alpha-medium" size="xl" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
                     <Column gap="32" style={{ zIndex: 1, position: 'relative' }}>
                       <Text onBackground="neutral-weak" variant="body-strong-m">OSS CONTRIBUTION</Text>
                       <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>10+</Heading>
                     </Column>
                   </Card>
                   <Card background="neutral-medium" fill radius="l" padding="m" paddingX="l" style={{ minHeight: '100px', position: 'relative', overflow: 'hidden' }}>
-                    <Icon name="github" color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 10, right: 10, opacity: 0.5, zIndex: 0 }} />
+                    <Icon name="merge" size="xl" fill color="neutral-alpha-medium" style={{ position: 'absolute', bottom: 20, right: 10, opacity: 0.5, zIndex: 0, scale: '1.5' }}   />
                     <Column fill gap="32" style={{ zIndex: 1, position: 'relative' }}>
                       <Text onBackground="neutral-weak" variant="body-strong-m">MERGED</Text>
                       <Heading onBackground="neutral-strong" style={{fontWeight: '400'}}>40+</Heading>
