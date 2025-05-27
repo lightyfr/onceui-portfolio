@@ -54,6 +54,31 @@
     border: 2px solid var(--neutral-on-background-medium);
 }
 
-.statImage {
+.expandCard {
+  background-color: var(--neutral-background-medium) !important;
+  border-style: solid;
+  border-width: 0px;
+  border-color: var(--neutral-alpha-weak);
+  position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 19px;
+    border: 2px solid var(--neutral-alpha-weak);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+  will-change: transform;
+  transition: transform 1.45s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
